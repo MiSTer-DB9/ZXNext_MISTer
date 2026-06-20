@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # `.status_in(...)` feedback-width check.
 #
-# Enforces .claude/rules/hazards/status-in-truncation.md. A core's hps_io
+# Enforces the fork hazard notes. A core's hps_io
 # `.status_in(...)` concat is the slice the FPGA hands back to Main_MiSTer
 # whenever `status_set` pulses (region detect, save-state load, BK callback,
 # ...). Bits NOT covered by that concat are driven as zero into status_req

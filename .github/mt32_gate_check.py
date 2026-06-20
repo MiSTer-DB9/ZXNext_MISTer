@@ -2,7 +2,7 @@
 # MT32-pi <-> USER_IO anti-contention double-gate check.
 #
 # Enforces the two mandatory gates documented in
-# .claude/rules/hazards/mt32-contention.md. Any core that ships MT32-pi
+# the fork hazard notes. Any core that ships MT32-pi
 # support (sys/mt32pi.sv) AND DB9 shares the USER_IO pins between the MT32
 # I2C link and the DB9/DB15/Saturn controller. Without BOTH gates the MT32
 # slave logic mis-reads DB9 button states as I2C traffic, latches
@@ -18,7 +18,7 @@
 #           must be governed by a gate token (mt32_use / mt32_disable /
 #           mt32_on_primary), never an unconditional `else`.
 #
-# Recognised correct variants (all in mt32-contention.md):
+# Recognised correct variants (all in the fork hazard notes):
 #   * always_comb : `else if (mt32_use) begin USER_OUT[6:0] = USER_OUT_MT32;`
 #                   (Minimig / AtariST / X68000)
 #   * assign      : `... : mt32_use ? mt32_out : 8'hFF;`  (ao486)

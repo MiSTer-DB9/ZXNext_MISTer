@@ -2,7 +2,7 @@
 # Reusable Step-6 per-core verify checklist.
 #
 # Single source of truth for the checks documented prose-style in
-# porting/WORKFLOW.md "Step 6 — Verify each core before committing".
+# the fork workflow notes "Step 6 — Verify each core before committing".
 # WORKFLOW.md should reference this file instead of duplicating the bash.
 #
 #   step6_verify <core_dir> <core_sv_relpath>
@@ -144,7 +144,7 @@ step6_verify() {
   else
     _bad "10 sys/hps_io.{sv,v} not found"; fi
 
-  # 11. Saturn-first CONF_STR ordering (hazards/saturn-osd-cycle.md). When
+  # 11. Saturn-first CONF_STR ordering (the fork hazard notes). When
   #     "UserIO Joystick" lists DB9MD before Saturn, the first OSD click
   #     lands on DB9MD, which drives the MD select line and reads the Saturn
   #     pad as random buttons -> ghost inputs the user cannot click past to
